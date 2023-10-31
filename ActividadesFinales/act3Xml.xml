@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pagos
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="act3_Finales_DavidDoichita.xsd">
+    <nombre dni="123456789A">Javier toledano</nombre>
+    <fechaNacimiento edad="24">2006-01-30</fechaNacimiento>
+    <hora>24:00</hora>
+    <hora>23:55:55</hora>
+    <precio>123.56</precio>
+    <cantidad>678</cantidad>
+    <pagado>true</pagado>
+</pagos>
