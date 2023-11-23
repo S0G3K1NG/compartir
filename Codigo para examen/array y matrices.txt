@@ -1,0 +1,212 @@
+ //Operaciones con arrays
+    /*
+                    __
+        (\,--------'()'--o
+         (_    ___    /~"
+          (_)_)  (_)_)
+     */
+    public static void llenarArray(int[] array){
+        int rnd;
+
+        for (int i = 0; i < array.length; i++){
+
+            rnd = (int) (Math.random() * 100 + 1);
+            array[i] = rnd;
+        }
+    }
+    public static void imprimirArray(int[] array){
+        int cont = 0;
+
+        for (int item : array){
+
+            cont++;
+            System.out.print(item + " ");
+
+            if (cont == 4){
+
+                System.out.println();
+                cont = 0;
+            }
+        }
+    }
+
+    public static int sumaPares(int[] array ){
+        int res = 0;
+
+        for (int item : array){
+
+            if (item % 2 == 0){
+
+               res += item;
+            }
+        }
+
+        return res;
+    }
+
+    public static int sumaImpares(int[] array){
+        int res = 0;
+
+        for (int item : array){
+
+            if (item % 2 != 0){
+
+                res += item;
+            }
+        }
+
+        return res;
+    }
+
+    public static int buscarMaximo(int[] array){
+        int max = array[0];
+
+        for (int i = 1; i < array.length; i++){
+
+            if (array[i] > max){
+
+                max = array[i];
+            }
+        }
+
+        return max;
+    }
+
+    public static int buscarMinimo(int[] array){
+        int min = array[0];
+
+        for (int i = 1; i < array.length; i++){
+
+            if (array[i] < min){
+
+                min = array[i];
+            }
+        }
+
+        return min;
+    }
+
+    //Operaciones con matrices
+    /*
+       / \__
+      (    @\___
+      /         O
+     /   (_____/
+    /_____/   U
+     */
+
+    public static void llenarMatriz(int[][] matriz){
+        int rnd;
+
+        for (int i = 0; i < matriz.length; i++){
+
+            for (int j = 0; j < matriz.length; j++){
+
+                rnd = (int) (Math.random() * 100 + 1);
+                matriz[i][j] = rnd;
+            }
+        }
+    }
+
+    public static void imprimirMatriz(int[][] matriz){
+
+        for (int[] items : matriz){
+
+            for (int item : items) {
+
+                System.out.print(item + " ");
+            }
+
+            System.out.println();
+        }
+    }
+
+    public static int sumaParesMatriz(int[][] matriz){
+        int res = 0;
+
+        for (int[] items : matriz){
+
+            for (int item : items) {
+
+                if (item % 2 == 0) {
+
+                    res += item;
+                }
+            }
+        }
+
+        return res;
+    }
+
+    public static int sumaImparesMatriz(int[][] matriz){
+        int res = 0;
+
+        for (int[] items : matriz){
+
+            for (int item : items) {
+
+                if (item % 2 != 0) {
+
+                    res += item;
+                }
+            }
+        }
+
+        return res;
+    }
+
+    public static int[][] suma2Matrices(int[][] matrizA, int[][] matrizB){
+        int[][] nuevaMatriz = new int[matrizA.length][matrizA[0].length];
+
+        for (int i = 0; i < matrizA.length; i++){
+
+            for (int j = 0; j < matrizA[0].length; j++){
+
+                nuevaMatriz[i][j] = matrizA[i][j] + matrizB[i][j];
+            }
+        }
+
+        return nuevaMatriz;
+    }
+
+    public static int[][] resta2Matrices(int[][] matrizA, int[][] matrizB){
+        int[][] nuevaMatriz = new int[matrizA.length][matrizA[0].length];
+
+        for (int i = 0; i < matrizA.length; i++){
+
+            for (int j = 0; j < matrizA[0].length; j++){
+
+                nuevaMatriz[i][j] = matrizA[i][j] - matrizB[i][j];
+            }
+        }
+
+        return nuevaMatriz;
+    }
+
+    public static int[][] transponerMatriz(int[][] matriz){
+        int[][] nuevaMatriz = new int[matriz[0].length][matriz.length];
+
+        for (int i = 0; i < matriz[0].length; i++){
+
+            for (int j = 0; j < matriz.length; j++){
+
+                nuevaMatriz[i][j] = matriz[j][i];
+            }
+        }
+
+        return nuevaMatriz;
+    }
+
+    public static int[][] multiplicarMatriz(int[][] matriz, int num){
+        int[][] nuevaMatriz = new int[matriz.length][matriz[0].length];
+
+        for (int i = 0; i < matriz.length; i++){
+
+            for (int j = 0; j < matriz[0].length; j++){
+
+                nuevaMatriz[i][j] = matriz[i][j] * num;
+            }
+        }
+
+        return nuevaMatriz;
+    }

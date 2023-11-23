@@ -1,0 +1,30 @@
+	System.out.print("\nNumero a buscar: ");
+        int num = in.nextInt();
+          
+        boolean encontrado = false;
+        int inicio = 0;
+        int fin = array.length;
+        int cont = 0;
+        
+        while (inicio <= fin){
+            cont++;
+            int mitad = (inicio + fin)/2;
+            
+            if (num == array[mitad]){
+                
+                System.out.printf("\nNumero encontrado en la posicion %d"
+                        + ", array partido %d veces", mitad, cont);
+                encontrado = true;
+                break;
+            }else if (num > array[mitad]){
+                
+                inicio = mitad+1;
+            }else{
+                
+                fin = mitad-1;
+            }
+        }
+        if (!encontrado){
+        
+            System.out.println("\nNumero no encontrado");
+        }

@@ -1,0 +1,214 @@
+package matematicas;
+
+public class Varias {
+    public static String voltea(String cadena){
+        String[] cadenaArray = cadena.split("");
+        String cadenaInvertida = "";
+        for (int i = cadena.length()-1; i >= 0; i--){
+
+            cadenaInvertida += cadenaArray[i];
+        }
+
+        return cadenaInvertida;
+    }
+    public static boolean esCapicua(int num){
+
+        String numString = Integer.toString(num);
+
+        String numVolt = voltea(numString);
+
+        return (numString.equals(numVolt));
+    }
+
+    public static boolean esPrimo(int num){
+
+        if (num <= 1){
+
+            return false;
+        }else {
+
+            for (int i = 2; i < num; i++){
+
+                if (num % i == 0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static int siguientePrimo(int num){
+        int numero = num + 1;
+
+        while (true){
+
+            if (esPrimo(numero)){
+
+                return numero;
+            }else {
+
+                numero++;
+            }
+        }
+    }
+
+    public static int potencia(int base, int potencia){
+
+        if (potencia == 1){
+
+            return base;
+        }
+
+        return base *= potencia(base, potencia - 1);
+    }
+
+    public static int digitos(int num){
+
+        String numero = Integer.toString(num);
+
+        return numero.length();
+    }
+
+    public static int digitoN(int num, int pos){
+
+        String[] numArray = Integer.toString(num).split("");
+
+        return Integer.parseInt(numArray[pos-1]);
+    }
+
+    public static int posicionDeDigito(int num, int digito){
+
+        String[] numeroArray = Integer.toString(num).split("");
+
+        int lon = digitos(num);
+
+        for (int i = 0; i < lon; i++){
+
+            if (Integer.parseInt(numeroArray[i]) == digito){
+
+                return i + 1;
+            }
+        }
+        return -1;
+    }
+
+    public  static int quitaPorDetras(int num, int cant){
+
+        String[] numArray = Integer.toString(num).split("");
+
+        int lon = digitos(num);
+
+       String numModif = "";
+
+        for (int i = 0; i < lon-cant; i++){
+
+            numModif += numArray[i];
+        }
+
+        return Integer.parseInt(numModif);
+    }
+
+    public static int quitaPorDelante(int num, int cant){
+
+        String[] numArray = Integer.toString(num).split("");
+
+        int lon = digitos(num);
+
+        String numModif = "";
+
+        for (int i = lon-cant; i < lon; i++){
+
+            numModif += numArray[i];
+        }
+
+        return Integer.parseInt(numModif);
+    }
+
+    public static int pegaPorDetras(int num, int aPegar){
+
+        String numString = Integer.toString(num);
+        String aPegarString = Integer.toString(aPegar);
+
+        return Integer.parseInt(numString + aPegarString);
+    }
+
+    public static int pegaPorDelante(int num, int aPegar){
+
+        String numString = Integer.toString(num);
+        String aPegarString = Integer.toString(aPegar);
+
+        return Integer.parseInt(aPegarString + numString);
+    }
+
+    public static int trozoDeNumero(int num, int ini, int fin){
+
+        String numString = Integer.toString(num);
+
+        return Integer.parseInt(numString.substring(ini-1,fin));
+    }
+
+    public static int pegaDosNumeros(int num1, int num2){
+
+        String num1Array = Integer.toString(num1);
+        String num2Array = Integer.toString(num2);
+
+        return Integer.parseInt(num1Array + num2Array);
+    }
+
+    public static void primos1A1000(){
+        int cont = 0;
+
+        for (int i = 1; i <= 1000; i++){
+
+            if (esPrimo(i)){
+
+                System.out.print(i + " ");
+                cont++;
+            }
+
+            if (cont == 4){
+
+                System.out.println();
+                cont = 0;
+            }
+        }
+    }
+
+    public static void capicua1A99999(){
+
+        int cont = 0;
+
+        for (int i = 1; i <= 1000; i++){
+
+            if (esCapicua(i)){
+
+                System.out.print(i + " ");
+                cont++;
+            }
+
+            if (cont == 4){
+
+                System.out.println();
+                cont = 0;
+            }
+        }
+    }
+
+    public static int binarioADecimal(int num){
+
+        String[] numArray = Integer.toString(num).split("");
+        int numDecimal = 0;
+        int cont = 0;
+
+        for (int i = numArray.length - 1; i >= 0; i--){
+
+            if (numArray[i].equals("1")){
+
+                numDecimal += (int) Math.pow(2,cont);
+            }
+            cont++;
+        }
+
+        return numDecimal;
+    }
+}
